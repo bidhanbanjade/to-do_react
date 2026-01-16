@@ -1,6 +1,6 @@
 import TodoItem from "./ToDoItem";
 
-function TodoList({ todos = [], deleteTodo, toggleTodo }) {
+function TodoList({ todos = [], deleteTodo, toggleTodo, editTodo }) {
   if (todos.length === 0) {
     return <p className="text-muted text-center">No tasks yet.</p>;
   }
@@ -13,6 +13,7 @@ function TodoList({ todos = [], deleteTodo, toggleTodo }) {
           todo={todo}
           deleteTodo={deleteTodo}
           toggleTodo={toggleTodo}
+          editTodo={editTodo}
         />
       ))}
     </ul>

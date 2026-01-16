@@ -27,6 +27,14 @@ function App() {
     );
   };
 
+  const editTodo = (id, newText) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, text: newText } : todo
+      )
+    );
+  };
+
   return (
     <div className="container mt-5">
       <Navbar />
@@ -37,6 +45,7 @@ function App() {
         todos={todos}
         deleteTodo={deleteTodo}
         toggleTodo={toggleTodo}
+        editTodo={editTodo}
       />
     </div>
   );
